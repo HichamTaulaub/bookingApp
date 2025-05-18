@@ -12,7 +12,7 @@ const register = async (req,res,next)=>{
 
     const newUser = new User({
       ...req.body,
-      password: hashed
+      password: hashed 
     })
     await newUser.save()
     res.status(200).json("user cretaed")

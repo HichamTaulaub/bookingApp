@@ -45,6 +45,9 @@ const getHotel = async (req,res,next) =>{
         next(err)
     }
 }
+
+
+
 // GET ALL HOTELS
 const getHotels = async (req, res, next) => {
     const { min, max, limit, ...others } = req.query;
@@ -110,4 +113,61 @@ const countByType = async (req, res, next) => {
     }
   };
 
-module.exports = {createHotel, updateHotel, deleteHotel, getHotel, getHotels, countByCity, countByType, getHotelRooms}
+  const getOnlyHotels = async (req,res,next) =>{
+
+    try {
+        const hotelss = await Hotel.find({ type: "hotel"})
+        res.status(200).json(hotelss)
+    } catch (err) {
+        next(err)
+    }
+}
+
+  const getOnlyCabins = async (req,res,next) =>{
+
+    try {
+        const hotelss = await Hotel.find({ type: "cabin"})
+        res.status(200).json(hotelss)
+    } catch (err) {
+        next(err)
+    }
+}
+
+  const getOnlyApartments = async (req,res,next) =>{
+
+    try {
+        const hotelss = await Hotel.find({ type: "apartment"})
+        res.status(200).json(hotelss)
+    } catch (err) {
+        next(err)
+    }
+}
+
+  const getOnlyResorts = async (req,res,next) =>{
+
+    try {
+        const hotelss = await Hotel.find({ type: "resort"})
+        res.status(200).json(hotelss)
+    } catch (err) {
+        next(err)
+    }
+}
+
+  const getOnlyVillas = async (req,res,next) =>{
+
+    try {
+        const hotelss = await Hotel.find({ type: "villa"})
+        res.status(200).json(hotelss)
+    } catch (err) {
+        next(err)
+    }
+}
+
+module.exports = {createHotel, updateHotel, deleteHotel,
+   getHotel, getHotels, countByCity,
+    countByType, getHotelRooms
+    , getOnlyHotels
+    , getOnlyApartments
+    , getOnlyResorts
+    , getOnlyVillas
+    , getOnlyCabins}

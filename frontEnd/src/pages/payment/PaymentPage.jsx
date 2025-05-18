@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PaymentPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const PaymentPage = () => {
   const [paymentMethod, setPaymentMethod] = useState('credit');
@@ -42,6 +43,10 @@ const PaymentPage = () => {
     });
     alert('Payment processed successfully!');
   };
+const navigate = useNavigate();
+const handleClick = () => {
+  navigate('/')
+}
 
   return (
     <div className="payment-container">
@@ -181,7 +186,7 @@ const PaymentPage = () => {
             </div>
           </div>
 
-          <button type="submit" className="pay-button">
+          <button onClick={handleClick} type="submit" className="pay-button">
             Complete Payment
           </button>
         </form>
