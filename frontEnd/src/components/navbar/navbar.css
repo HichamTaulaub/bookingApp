@@ -1,4 +1,4 @@
-.navbar{
+/* .navbar{
   height: 50px;
   background-color: #003580;
   display: flex;
@@ -32,4 +32,86 @@
   padding: 5px 10px;
   cursor: pointer;
   color: #003580;
+} */
+
+.navbar {
+  height: 50px;
+  background-color: #003580;
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+  width: 100%;
+  max-width: 1024px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.headerListnav {
+  display: flex;
+  gap: 40px;
+}
+
+.headerListItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.navButton {
+  margin-left: 20px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #003580;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* For screens <= 768px */
+@media (max-width: 768px) {
+  .headerListnav {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #003580;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  .headerListnav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }

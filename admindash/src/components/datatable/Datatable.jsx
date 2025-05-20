@@ -40,9 +40,9 @@ await axios.delete(`http://localhost:8800/api/${path}/${id}`, {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/users/test" style={{ textDecoration: "none" }}>
+            {/* <Link to="/users/test" style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
-            </Link>
+            </Link> */}
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row._id)}
@@ -66,8 +66,8 @@ await axios.delete(`http://localhost:8800/api/${path}/${id}`, {
         className="datagrid"
         rows={list}
         columns={columns.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
+        pageSize={6}
+        rowsPerPageOptions={[6]}
         checkboxSelection
         getRowId={row => row._id}
       />
