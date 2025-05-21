@@ -107,7 +107,7 @@ const Navbar = () => {
         <div className={`headerListnav ${menuOpen ? "open" : ""}`}>
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <span onClick={()=> navigate('/')}>Stays</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faPlane} />
@@ -117,10 +117,10 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faCar} />
             <span>Car rentals</span>
           </div>
-          <div className="headerListItem">
+          {/* <div className="headerListItem">
             <FontAwesomeIcon icon={faBed} />
             <span>Attractions</span>
-          </div>
+          </div> */}
           <div className="headerListItem">
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airport taxis</span>
@@ -129,7 +129,8 @@ const Navbar = () => {
 
         {user ? (
           <div>
-            {user.username} <LogoutButton />
+            <button onClick={()=> navigate('/my-reservations')}>{user.username} / My reservations</button>
+             <LogoutButton />
           </div>
         ) : (
           <div className="navItems">

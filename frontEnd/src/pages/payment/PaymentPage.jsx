@@ -45,7 +45,7 @@ const PaymentPage = () => {
   };
 const navigate = useNavigate();
 const handleClick = () => {
-  navigate('/')
+  navigate('/my-reservations')
 }
 
   return (

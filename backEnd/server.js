@@ -7,6 +7,8 @@ const hotelsRoutes = require('./routes/hotels');
 const roomsRoutes = require('./routes/rooms');
 const cors = require('cors');
 const cookieParser = require('cookie-parser')
+const reservationRoutes = require("./routes/reservationRoutes");
+
 
 
 const app = express();
@@ -39,6 +41,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/hotels', hotelsRoutes);
 app.use('/api/rooms', roomsRoutes);
+app.use("/api/reservations", reservationRoutes);
 
 app.use((err, req, res, next)=>{
  const errorStatus = err.status || 500;

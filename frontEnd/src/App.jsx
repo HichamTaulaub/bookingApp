@@ -11,6 +11,10 @@ import PaymentPage from "./pages/payment/PaymentPage";
 import Agadir from "./pages/list/Agadir";
 import './main.css';
 import Onlyhotels from "./pages/list/Onlyhotels";
+import MyReservations from "./pages/MyReservations";
+
+// inside <Routes>
+
 
 
 
@@ -33,6 +37,7 @@ function App() {
          <Route path="/resorts" element={<Onlyhotels/>}/>
          <Route path="/villas" element={<Onlyhotels/>}/>
          <Route path="/cabins" element={<Onlyhotels/>}/>
+         <Route path="/my-reservations" element={<MyReservations />} />
         
         
       </Routes>
